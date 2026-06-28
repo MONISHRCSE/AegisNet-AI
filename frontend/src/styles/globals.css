@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root { color-scheme: dark; }
+  * { @apply border-aegis-border; }
+  body {
+    @apply bg-aegis-bg text-slate-200 font-sans antialiased;
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%231e293b' fill-opacity='0.3'%3E%3Cpath d='M0 0h40v1H0zM0 0h1v40H0z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  ::-webkit-scrollbar { @apply w-1.5; }
+  ::-webkit-scrollbar-track { @apply bg-aegis-bg; }
+  ::-webkit-scrollbar-thumb { @apply bg-aegis-border rounded-full; }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-aegis-card/80 backdrop-blur-md border border-aegis-border rounded-xl shadow-card;
+  }
+  .accent-glow {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.25);
+    @apply border-aegis-accent/40;
+  }
+  .danger-glow {
+    box-shadow: 0 0 20px rgba(255, 59, 92, 0.25);
+    @apply border-aegis-danger/40;
+  }
+  .mono { @apply font-mono text-sm; }
+  .severity-critical { @apply text-aegis-danger bg-aegis-danger/10 border-aegis-danger/30; }
+  .severity-high     { @apply text-orange-400 bg-orange-400/10 border-orange-400/30; }
+  .severity-medium   { @apply text-aegis-warn bg-aegis-warn/10 border-aegis-warn/30; }
+  .severity-low      { @apply text-aegis-success bg-aegis-success/10 border-aegis-success/30; }
+  .btn-primary {
+    @apply px-4 py-2 bg-aegis-accent text-aegis-bg font-semibold rounded-lg
+           hover:bg-cyan-300 transition-colors duration-200 focus:outline-none
+           focus:ring-2 focus:ring-aegis-accent/50;
+  }
+  .btn-danger {
+    @apply px-4 py-2 bg-aegis-danger/20 text-aegis-danger border border-aegis-danger/40
+           font-semibold rounded-lg hover:bg-aegis-danger/30 transition-colors duration-200;
+  }
+}

@@ -1,0 +1,14 @@
+.env
+*.pyc
+__pycache__/
+*.egg-info/
+.DS_Store
+*.log
+nginx/certs/
+postgres_data/
+mongo_data/
+redis_data/
+zeek_logs/
+.pytest_cache/
+htmlcov/
+.coverage
